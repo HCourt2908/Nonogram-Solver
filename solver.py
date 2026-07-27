@@ -224,34 +224,4 @@ def create_configurations(board, row_clues, column_clues):
 
     return row_configurations, column_configurations
 
-def main():
 
-    length = 6
-    height = 6
-    board = [[UNKNOWN for _ in range(length)] for _ in range(height)]
-
-    row_clues = [
-        [1, 1],
-        [2, 1],
-        [2, 1],
-        [3, 2],
-        [1, 2],
-        [2]
-    ]
-
-    column_clues = [
-        [4],
-        [3],
-        [3],
-        [1, 1],
-        [1, 2],
-        [3]
-    ]
-
-    row_configurations, column_configurations = create_configurations(board, row_clues, column_clues)   
-    board = solve_nonogram(board, row_clues, column_clues, row_configurations, column_configurations)
-    print_board(board)
-    
-
-if __name__ == "__main__":
-    main()
